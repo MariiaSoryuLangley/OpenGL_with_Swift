@@ -1,10 +1,10 @@
 
 
-//import UIKit
+import UIKit
 import GLKit
 
 
-class RacoonView: GLKViewController, GLKViewControllerDelegate {
+class CatViewController: GLKViewController, GLKViewControllerDelegate {
  
     private var rotation: Float = 1.0
     
@@ -15,8 +15,8 @@ class RacoonView: GLKViewController, GLKViewControllerDelegate {
         effect.transform.projectionMatrix = projectionMatrix
         var modelViewMatrix = GLKMatrix4MakeTranslation(0.0, 0.0, -6.0)
         rotation += 90 * Float(timeSinceLastUpdate)
-        modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1)
-        //effect.transform.modelviewMatrix = modelViewMatrix
+        //modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1)
+        effect.transform.modelviewMatrix = modelViewMatrix
 
     }
     

@@ -16,7 +16,7 @@ class CatView: GLKViewController, GLKViewControllerDelegate {
         effect.transform.projectionMatrix = projectionMatrix
         var modelViewMatrix = GLKMatrix4MakeTranslation(0.0, 0.0, -6.0)
         rotation += 90 * Float(timeSinceLastUpdate)
-       // modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1)//вращаем фигуру, 0, 0, 0 - квадрата нет; 0, 0, 1 - вращается вокруг центра; 0, 1, 1 - вращается хз как, но не так; 1, 1, 1 - вращается хз как, но не так; 1, 0, 1 - вращается хз как, но не так
+        //modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1) 
         effect.transform.modelviewMatrix = modelViewMatrix
 
     }

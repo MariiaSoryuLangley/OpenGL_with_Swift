@@ -86,11 +86,10 @@ class SquareView: GLKViewController, GLKViewControllerDelegate {
     }
 
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
-       // repeat{
-        glClearColor(0.5, 0.5, 0.85, 1.0)
-            glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
+       glClearColor(0.5, 0.5, 0.85, 1.0)
+       glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
             
-       // }while
+   
 
         effect.prepareToDraw()
 
@@ -113,7 +112,9 @@ class SquareView: GLKViewController, GLKViewControllerDelegate {
     ]
     override func viewDidLoad() {
       super.viewDidLoad()
+        view.backgroundColor = .blue
       setupGL()
+      
 
     }
 

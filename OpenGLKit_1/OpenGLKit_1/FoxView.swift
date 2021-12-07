@@ -7,14 +7,14 @@ class FoxView: GLKViewController, GLKViewControllerDelegate {
     private var rotation: Float = 1.0
     
     func glkViewControllerUpdate(_ controller: GLKViewController) {
-        let aspect = fabsf(Float(view.bounds.size.width) / Float(view.bounds.size.height))
+        let aspect = fabsf(Float(view.bounds.size.width) / Float(view.bounds.size.height)) //соотношение сторон
         let projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0), aspect, 4.0, 10.0)
       
         effect.transform.projectionMatrix = projectionMatrix
         var modelViewMatrix = GLKMatrix4MakeTranslation(0.0, 0.0, -6.0)
         rotation += 90 * Float(timeSinceLastUpdate)
-      //  modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1)//вращаем фигуру, 0, 0, 0 - квадрата нет; 0, 0, 1 - вращается вокруг центра; 0, 1, 1 - вращается хз как, но не так; 1, 1, 1 - вращается хз как, но не так; 1, 0, 1 - вращается хз как, но не так
-        effect.transform.modelviewMatrix = modelViewMatrix
+        modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1)
+       // effect.transform.modelviewMatrix = modelViewMatrix // вращение
 
     }
     
@@ -87,7 +87,7 @@ class FoxView: GLKViewController, GLKViewControllerDelegate {
         effect.prepareToDraw()
         
         glBindVertexArrayOES(vao);
-        glDrawElements(GLenum(GL_TRIANGLES), GLsizei(​Indices.count), GLenum(GL_UNSIGNED_BYTE), nil)
+         glDrawElements(GLenum(GL_TRIANGLES), GLsizei(​Indices.count), GLenum(GL_UNSIGNED_BYTE), nil)
         glBindVertexArrayOES(0)
 
     }
