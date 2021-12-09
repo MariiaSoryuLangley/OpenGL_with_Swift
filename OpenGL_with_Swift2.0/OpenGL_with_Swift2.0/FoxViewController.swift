@@ -15,7 +15,7 @@ class FoxViewController: GLKViewController, GLKViewControllerDelegate {
         var modelViewMatrix = GLKMatrix4MakeTranslation(0.0, 0.0, -6.0)
         rotation += 90 * Float(timeSinceLastUpdate)
         modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(rotation), 0, 0, 1)
-       // effect.transform.modelviewMatrix = modelViewMatrix // вращение
+        effect.transform.modelviewMatrix = modelViewMatrix // вращение
 
     }
     

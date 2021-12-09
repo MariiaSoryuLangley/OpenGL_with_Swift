@@ -17,27 +17,28 @@ class ViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SquareViewController") as? SquareViewController else {
             return
         }
-        present(vc, animated: true)
+      //  present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func GoToFox(){
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "FoxViewController") as? FoxViewController else {
             return
         }
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func GoToCat(){
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "CatViewController") as? CatViewController else {
             return
         }
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func GoToCube(){
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "CubeViewController") as? CubeViewController else {
             return
         }
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -87,7 +87,7 @@ class CubeViewController: GLKViewController, GLKViewControllerDelegate {
 
       EAGLContext.setCurrent(nil)
 
-    effect.finalize()
+      effect.finalize()
       context = nil
     }
 
@@ -102,10 +102,9 @@ class CubeViewController: GLKViewController, GLKViewControllerDelegate {
         effect.prepareToDraw()
         lock.lock()
 
-       
     
         glBindVertexArrayOES(vao);
-        glDrawArrays(GLenum(GL_TRIANGLES), 0, 3)
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, 12*3)
         glBindVertexArrayOES(0)
         lock.unlock()
         print("Start")
